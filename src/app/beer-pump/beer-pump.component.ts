@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PumpsService } from '../services/pumps.service';
+import { Pump } from '../models/pump';
 
 @Component({
   selector: 'app-beer-pump',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BeerPumpComponent implements OnInit {
 
-  constructor() { }
+  pumpArray: Pump[];
+
+  constructor(private dataService: PumpsService) { }
 
   ngOnInit() {
+    this.dataService.getBeersPumps().subscribe(pump => {
+      this.pumpArray = pump;
+      console.log(this.pumpArray);
+    });
   }
 
+  updateOutflow(i) {
+    this.dataService.updateOutflow(this.pumpArray[i - 1]).subscribe(beerData => beerData);
+  }
 }

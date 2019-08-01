@@ -1,1 +1,11 @@
-<p>admin-pump works!</p>
+<h1 class="text-uppercase text-center my-5">Add a beer for sale</h1>
+
+<div class="formulaire d-flex justify-content-center">
+    <form [formGroup]="beerForm" (ngSubmit)="addBeer()" class="my-5">
+        <div class="form-group">
+            <label for="name">Name of the beer ?</label>
+            <input formControlName="type" type="text" class="form-control" id="type" placeholder="Entrez le nom">
+        </div>
+        <button type="submit" class="btn btn-dark">Add</button>
+    </form>
+</div>

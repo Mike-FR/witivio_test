@@ -1,1 +1,20 @@
-<p>beer-pump works!</p>
+<h1 class="text-uppercase text-center mt-5">Beers on sale</h1>
+
+
+<div class="container d-flex mt-5">
+    <div class="card-deck text-center">
+        <div *ngFor="let pump of pumpArray; let i = index" class="card">
+            <img src="/assets/beer-barrel.jpg" class="card-img-top" alt="beer">
+            <div class="card-body">
+                <h5 class="card-title"><strong>{{pump.type}}</strong></h5>
+                <!-- <p>{{i+1}}</p> -->
+                <div class="d-flex flex-column align-items-center mb-3">
+                    <h6>Outflow</h6>
+                    <input type="number" name="outflow" id="outflow" value={{pump.outflow}} [(ngModel)]="pumpArray[i].outflow">
+                    <em>Liters/second</em>
+                </div>
+                <button type="button"(click)="updateOutflow(pump.id)" class="btn btn-dark btn-sm">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
