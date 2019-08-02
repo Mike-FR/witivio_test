@@ -4,12 +4,13 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Récupérer la base de données
 
-commande : mysql --user=mon_user --password=mon_password binouze < binouze.sql
+commande : __mysql --user=mon_user --password=mon_password binouze < binouze.sql__
 
 ## Recréer la connexion à mysql
 
-Dans le dossier Backend, créer un fichier "conf.js" avec le contenu :
+Dans le dossier Backend, créer un fichier __"conf.js"__ avec le contenu :
 
+```sql
 const mysql = require('mysql');
 const connection = mysql.createConnection({
     host: 'localhost', // adresse du serveur
@@ -18,12 +19,13 @@ const connection = mysql.createConnection({
     database: 'binouze', // le nom de la base de données
 });
 module.exports = connection;
+```
 
 
 ## Lancer le projet
 
 commande dans le dossier Backend : 
-- npm install puis npm start
+- __npm install__ puis __npm start__
 
 commande à la racine du projet :
-- npm install puis ng serve -o
+- __npm install__ puis __ng serve -o__
