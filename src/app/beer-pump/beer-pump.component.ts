@@ -25,4 +25,15 @@ export class BeerPumpComponent implements OnInit {
     this.dataService.updateOutflow(this.pumpArray[i - 1]).subscribe(beerData => beerData);
   }
 
+  removePump(delID: number) {
+    this.dataService.deletePump(delID).subscribe(() => console.log(`Pompe ${delID} supprimée`),
+      (err) => console.log(err)
+    );
+    for (let i = 0; i < this.pumpArray.length; i++) {
+      if (this.pumpArray[i].id === delID) {
+        this.pumpArray.splice(i, 1);
+        break;
+      }
+    }
+  }
 }

@@ -42,5 +42,16 @@ router.put('/:id', (req, res) => {
   });
 });
 
+/* DELETE a pump */
+router.delete('/:id', (req, res) => {
+  const deleteId = req.params.id;
+  connection.query('DELETE FROM beerpump WHERE id = ?', deleteId, (err, res) => {
+      if (err) {
+          console.log(err);
+          res.status(500).send(`Erreur lors de la suppression de la pompe n°${deleteId}`);
+      }
+  });
+});
+
 
 module.exports = router;

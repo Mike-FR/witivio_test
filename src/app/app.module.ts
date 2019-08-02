@@ -13,6 +13,7 @@ import { BeerPumpComponent } from './beer-pump/beer-pump.component';
 // import ngx-bootstrap
 import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { AlertModule } from 'ngx-bootstrap/alert';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { AlertModule } from 'ngx-bootstrap/alert';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    TooltipModule.forRoot(),
     AccordionModule.forRoot(),
     AlertModule.forRoot()
   ],

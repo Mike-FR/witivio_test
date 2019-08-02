@@ -16,3 +16,14 @@ h1 {
   text-shadow: 2px 2px 1px black;
   font-size: 3em;
 }
+
+.far.fa-times-circle {
+  color: red;
+}
+
+.head {
+  display: inline-flex;
+  align-items: baseline;
+  width: 100%;
+  justify-content: center;
+}
