@@ -6,15 +6,16 @@
         <div *ngFor="let pump of pumpArray; let i = index" class="card">
             <img src="/assets/beer-barrel.jpg" class="card-img-top" alt="beer">
             <div class="card-body">
-                <h5 class="card-title"><strong>{{pump.type}}</strong></h5>
-                <!-- <p>{{i+1}}</p> -->
+                <h5 class="card-title"><strong>{{pump.type}} beer</strong></h5>
                 <div class="d-flex flex-column align-items-center mb-3">
                     <h6>Outflow</h6>
-                    <input type="number" name="outflow" id="outflow" value={{pump.outflow}} [(ngModel)]="pumpArray[i].outflow">
+                    <input type="number" name="outflow" id="outflow" value={{pump.outflow}}
+                        [(ngModel)]="pumpArray[i].outflow" min="0" size="4">
                     <em>Liters/second</em>
                 </div>
-                <button type="button"(click)="updateOutflow(pump.id)" class="btn btn-dark btn-sm">Save</button>
+                <button type="button" (click)="updateOutflow(pump.id)" class="btn btn-dark btn-sm mb-3">Save</button>
             </div>
         </div>
     </div>
+
 </div>

@@ -1,1 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Baloo+Da|Germania+One|Pirata+One|Sancreek|Spicy+Rice&display=swap');
+
+body {
+    font-family: 'Germania One', cursive;
+    background:linear-gradient(rgba(255,255,255,.3), rgba(255,255,255,.3)), url("https://www.hopculture.com/wp-content/uploads/2018/01/dcbars-sovereignLEAD.jpg");
+}

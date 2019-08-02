@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PumpsService } from '../services/pumps.service';
 import { Pump } from '../models/pump';
+import { AlertComponent } from 'ngx-bootstrap/alert/alert.component';
 
 @Component({
   selector: 'app-beer-pump',
@@ -23,4 +24,5 @@ export class BeerPumpComponent implements OnInit {
   updateOutflow(i) {
     this.dataService.updateOutflow(this.pumpArray[i - 1]).subscribe(beerData => beerData);
   }
+
 }
