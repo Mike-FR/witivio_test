@@ -17,10 +17,11 @@
                             [(ngModel)]="pumpArray[i].outflow" min="0" size="4">
                         <em>Liters/second</em>
                     </div>
-                    <button type="button" (click)="updateOutflow(pump.id)"
+                    <button type="button" (click)="updateOutflow(i)"
                         class="btn btn-dark btn-sm mb-3">Save</button>
                 </div>
             </div>
         </ng-container>
     </div>
 </div>
+

@@ -21,7 +21,7 @@ export class PumpsService {
   }
 
   updateOutflow(body): Observable<any>  {
-    return this.http.put(`${this.url}/pump/${body.id}`, body, {});
+    return this.http.put(`${this.url}/pump/${body.id}`, body);
   }
 
   deletePump(id: number): Observable<void> {
