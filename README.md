@@ -2,26 +2,30 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.3.
 
-## Development server
+## Récupérer la base de données
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+commande : __mysql --user=mon_user --password=mon_password binouze < binouze.sql__
 
-## Code scaffolding
+## Recréer la connexion à mysql
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Dans le dossier Backend, créer un fichier __"conf.js"__ avec le contenu :
 
-## Build
+```sql
+const mysql = require('mysql');
+const connection = mysql.createConnection({
+    host: 'localhost', // adresse du serveur
+    user: 'mon user', // le nom d'utilisateur
+    password: 'mon mot de passe', // le mot de passe
+    database: 'binouze', // le nom de la base de données
+});
+module.exports = connection;
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+## Lancer le projet
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+commande dans le dossier Backend : 
+- __npm install__ puis __npm start__
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+commande à la racine du projet :
+- __npm install__ puis __ng serve -o__
